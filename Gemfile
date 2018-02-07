@@ -5,20 +5,25 @@ git_source(:github) do |repo_name|
   "http://github.com/#{repo_name}.git"
 end
 
-gem "paperclip" 
-gem 'sorcery'
-
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4'
-# Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'sqlite3'
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 0.20'
+  gem 'rails_12factor'
 end
+
+
+gem "paperclip" 
+gem 'sorcery'
+
+
+
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 5.1.4'
+# Use sqlite3 as the database for Active Record
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
